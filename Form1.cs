@@ -39,6 +39,7 @@ namespace motiv_client
             Properties.Settings.Default.Password = PasswordBox.Text;
             Properties.Settings.Default.CountsPerUpload = (int)CountPerUploadBox.Value;
             Properties.Settings.Default.Save();
+            Hide();
         }
 
         void hookMouseTest(ref MouseHook.StateMouse s)
@@ -88,20 +89,25 @@ namespace motiv_client
             }
         }
 
-        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        private async void toolStripMenuItem1_Click(object sender, EventArgs e)
         {
             MouseHook.Stop();
             KeyboardHook.Stop();
-            Send();
+            await Post.Send(keydowns, clicks);
             isQuit = true;
             Application.Exit();
         }
 
-        void Send()
+        void Send(bool isWait = false)
         {
             Task.Run(() => Post.Send(keydowns, clicks));
             clicks = 0;
             keydowns = 0;
+        }
+
+        private void optionsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Show();
         }
     }
 }

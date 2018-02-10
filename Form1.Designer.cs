@@ -43,6 +43,7 @@
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.label4 = new System.Windows.Forms.Label();
             this.CountPerUploadBox = new System.Windows.Forms.NumericUpDown();
+            this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CountPerUploadBox)).BeginInit();
             this.SuspendLayout();
@@ -112,26 +113,27 @@
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.clicksItem,
             this.keydownsItem,
+            this.optionsToolStripMenuItem,
             this.toolStripMenuItem1});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.ShowImageMargin = false;
-            this.contextMenuStrip1.Size = new System.Drawing.Size(73, 70);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(128, 114);
             this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
             // 
             // clicksItem
             // 
             this.clicksItem.Name = "clicksItem";
-            this.clicksItem.Size = new System.Drawing.Size(72, 22);
+            this.clicksItem.Size = new System.Drawing.Size(127, 22);
             // 
             // keydownsItem
             // 
             this.keydownsItem.Name = "keydownsItem";
-            this.keydownsItem.Size = new System.Drawing.Size(72, 22);
+            this.keydownsItem.Size = new System.Drawing.Size(127, 22);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(72, 22);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(127, 22);
             this.toolStripMenuItem1.Text = "Quit";
             this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
@@ -156,6 +158,13 @@
             this.CountPerUploadBox.Size = new System.Drawing.Size(132, 19);
             this.CountPerUploadBox.TabIndex = 7;
             this.CountPerUploadBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // optionsToolStripMenuItem
+            // 
+            this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
+            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.optionsToolStripMenuItem.Text = "Options";
+            this.optionsToolStripMenuItem.Click += new System.EventHandler(this.optionsToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -200,6 +209,7 @@
         private System.Windows.Forms.ToolStripMenuItem keydownsItem;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.NumericUpDown CountPerUploadBox;
+        private System.Windows.Forms.ToolStripMenuItem optionsToolStripMenuItem;
     }
 }
 
