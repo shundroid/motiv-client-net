@@ -92,14 +92,14 @@ namespace motiv_client
         {
             MouseHook.Stop();
             KeyboardHook.Stop();
-            Post.Send(keydowns, clicks);
+            Send();
             isQuit = true;
             Application.Exit();
         }
 
         void Send()
         {
-            Post.Send(keydowns, clicks);
+            Task.Run(() => Post.Send(keydowns, clicks));
             clicks = 0;
             keydowns = 0;
         }

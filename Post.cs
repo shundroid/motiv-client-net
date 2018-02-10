@@ -6,19 +6,22 @@ using System.Threading.Tasks;
 using System.Net;
 using System.Web;
 using System.Collections.Specialized;
+using System.Net.Http;
 
 namespace motiv_client
 {
     static class Post
     {
-        static internal void Send(int keydowns, int clicks)
+        static internal async Task Send(int keydowns, int clicks)
         {
-            WebClient wc = new WebClient();
-            NameValueCollection ps = new NameValueCollection();
-            ps.Add("password", Properties.Settings.Default.Password);
-            ps.Add("keydowns", keydowns.ToString());
-            ps.Add("clicks", clicks.ToString());
-            wc.UploadValues(Properties.Settings.Default.ServerUrl, ps);
+            var client = new HttpClient();
+            var content = new FormUrlEncodedContent(new SortedDictionary<string, string>
+            {
+                { "password", Properties.Settings.Default.Password },
+                { "keydowns", keydowns.ToString() },
+                { "clicks", clicks.ToString() }
+            });
+            await client.PostAsync(Properties.Settings.Default.ServerUrl, content);
         }
     }
 }
