@@ -1,6 +1,8 @@
 ﻿<p align="center">
   <img src="./motiv-logo.png" /><br />
-  A human motivation meter.
+  A human motivation meter.<br />
+  <br />
+  <img src="./thumbnail.png" /><br />
 </p>
 
 # motiv-client-net
